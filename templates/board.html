@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <title>Leaderboard</title>
+  </head>
+  <body>
+    <div>
+      <p>Time: {{ time_str }}</p>
+    </div>
+    <div>
+      <table>
+        <tr>
+          <th>ID</th>
+          <th>MRR@20</th>
+          <th>Timestamp</th>
+          <th>TA</th>
+          <th>class</th>
+        </tr>
+        {% for student in students %}
+          <tr>
+            <td>{{ student['idx'] }}</td>
+            <td>{{ student['mrr'] }}</td>
+            <td>{{ student['time'] }}</td>
+            <td>{{ student['ta'] }}</td>
+            <td>{{ student['class'] }}</td>
+          </tr>
+        {% endfor %}
+      </table>
+    </div>
+  </body>
+</html>
